@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kamran The Coder X - Portfolio</title>
+  <meta name="description" content="Portfolio of Kamran The Coder X - Web Developer and Tech Enthusiast">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+<style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --light-color: #ecf0f1;
+      --dark-color: #2c3e50;
+      --text-color: #333;
+      --text-light: #7f8c8d;
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: #f9f9f9;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--secondary-color);
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--accent-color);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    h1, h2, h3, h4 {
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      position: relative;
+      padding-bottom: 15px;
+      color: var(--primary-color);
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--secondary-color);
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: var(--secondary-color);
+      color: white;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-accent {
+      background: var(--accent-color);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .section-title {
+      margin-bottom: 50px;
+    }
+
+    /* Navigation */
+    nav {
+      background: white;
+      box-shadow: var(--shadow);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 15px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    .logo span {
+      color: var(--secondary-color);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 30px;
+    }
+
+    .nav-links a {
+      color: var(--dark-color);
+      font-weight: 600;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary-color);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+
+    /* Hero Section */
+    #hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(52, 152, 219, 0.8)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero-content .quote {
+      font-style: italic;
+      margin: 30px 0;
+      position: relative;
+    }
+
+    .hero-content .quote::before,
+    .hero-content .quote::after {
+      content: '"';
+      font-size: 1.5rem;
+      color: var(--accent-color);
+    }
+
+    .hero-btns {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero-btns .btn {
+      margin: 0 10px;
+    }
+
+    .social-icons {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .social-icons a:hover {
+      color: var(--accent-color);
+      transform: translateY(-5px);
+    }
+
+    /* About Section */
+    #about {
+      background: white;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-img {
+      position: relative;
+    }
+
+    .about-img img {
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      width: 100%;
+      height: auto;
+    }
+
+    .about-img:hover img {
+      transform: scale(1.03);
+    }
+
+    .about-img::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 5px solid var(--secondary-color);
+      top: 20px;
+      left: 20px;
+      z-index: -1;
+      border-radius: 10px;
+      transition: var(--transition);
+    }
+
+    .about-img:hover::before {
+      top: 15px;
+      left: 15px;
+    }
+
+    .about-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+    }
+
+    .about-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .info-item i {
+      margin-right: 10px;
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+    }
+
+    /* Skills Section */
+    #skills {
+      background: var(--light-color);
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .skill-category {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .skill-category:hover {
+      transform: translateY(-10px);
+    }
+
+    .skill-category h3 {
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .skill-item i {
+      color: var(--secondary-color);
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+
+    /* Projects Section */
+    #projects {
+      background: white;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-img {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .project-card:hover .project-img img {
+      transform: scale(1.1);
+    }
+
+    .project-info {
+      padding: 20px;
+    }
+
+    .project-info h3 {
+      margin-bottom: 10px;
+      color: var(--primary-color);
+    }
+
+    .project-info p {
+      color: var(--text-light);
+      margin-bottom: 15px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .project-links a {
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .project-links a i {
+      margin-right: 5px;
+    }
+
+
+    #testimonials {
+      background: var(--light-color);
+    }
+
+    .testimonials-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-size: 4rem;
+      color: rgba(52, 152, 219, 0.1);
+      font-family: Georgia, serif;
+    }
+
+    .testimonial-text {
+      margin-bottom: 20px;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .author-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+    }
+
+    .author-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-info h4 {
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+
+    .author-info p {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* Contact Section */
+    #contact {
+      background: white;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px;
+    }
+
+    .contact-info h3 {
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .contact-details {
+      margin-bottom: 30px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .contact-item i {
+      width: 40px;
+      height: 40px;
+      background: var(--light-color);
+      color: var(--secondary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      font-size: 1.2rem;
+    }
+
+    .contact-form {
+      width: 100%;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: inherit;
+      transition: var(--transition);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    }
+
+    .contact-form textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    .form-btn {
+      width: 100%;
+    }
+
+    .phone-input-container {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 5px;
+    }
+
+    .phone-digit {
+      width: 40px;
+      height: 50px;
+      text-align: center;
+      font-size: 18px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .phone-error {
+      color: red;
+      display: none;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .other-source-container {
+      display: none;
+      margin-top: 10px;
+    }
+
+
+    footer {
+      background: var(--dark-color);
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo span {
+      color: var(--secondary-color);
+    }
+
+    .footer-links {
+      display: flex;
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .footer-links li {
+      margin: 0 15px;
+    }
+
+    .footer-links a {
+      color: white;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-color);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .footer-social a {
+      color: white;
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      color: var(--accent-color);
+      transform: translateY(-5px);
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--secondary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--primary-color);
+      transform: translateY(-5px);
+    }
+
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    @media (max-width: 992px) {
+      .about-content,
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+
+      .about-img {
+        order: -1;
+      }
+
+      .skills-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .nav-links li {
+        margin: 15px 0;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-btns .btn {
+        margin: 10px 0;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .phone-digit {
+        width: 30px;
+        height: 40px;
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      section {
+        padding: 60px 0;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .about-info,
+      .skills-list {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-links {
+        flex-direction: column;
+      }
+
+      .footer-links li {
+        margin: 10px 0;
+      }
+    }</style>
+<body>
+  <nav>
+    <div class="container">
+      <div class="logo">Kamran <span>The Coder X</span></div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Hi, I'm Kamran The Coder X</h1>
+        <p>Student From LND College Motihari. </p>
+        <p class="quote">And My 1st Year BCA Preparation In 2025 July Enrolled.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn">Hire Me</a>
+          <a href="https://drive.google.com" target="_blank" class="btn btn-accent">View Resume</a>
+        </div>
+      </div>
+    </div>
+    <div class="social-icons">
+      <a href="https://github.com/KaiserKH" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.instagram.com/kamran__kaiser" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:kamranalam62073@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </section>
+  
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Passionate Developer & Problem Solver</h3>
+          <p>Hello! I am <strong>Kamran</strong>, a passionate BCA student at L.N.D. College. I enjoy building websites, learning programming languages, and exploring tech stuff.</p>
+          <p>I'm focused on becoming a full-stack web developer and love solving real-world problems with code. My journey in programming started when I was curious about how websites work, and since then, I've been constantly learning and improving my skills.</p>
+          <div class="about-info">
+            <div class="info-item">
+              <i class="fas fa-graduation-cap"></i>
+              <div>
+                <h4>Education</h4>
+                <p>BCA at L.N.D. College</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-code"></i>
+              <div>
+                <h4>Experience</h4>
+                <p>2+ Years Coding</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-project-diagram"></i>
+              <div>
+                <h4>Projects</h4>
+                <p>10+ Completed</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-language"></i>
+              <div>
+                <h4>Languages</h4>
+                <p>English, Hindi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-img">
+          <img src="image1.jpg" alt="Kamran The Coder X">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3>Technical Skills</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <i class="fab fa-html5"></i>
+              <span>HTML</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-js"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-java"></i>
+              <span>Java</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-python"></i>
+              <span>Python</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-git-alt"></i>
+              <span>Git & GitHub</span>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Soft Skills</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <i class="fas fa-lightbulb"></i>
+              <span>Problem Solving</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-users"></i>
+              <span>Teamwork</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-comments"></i>
+              <span>Communication</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-book"></i>
+              <span>Self Learning</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-clock"></i>
+              <span>Time Management</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-brain"></i>
+              <span>Critical Thinking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">My Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Portfolio Project">
+          </div>
+          <div class="project-info">
+            <h3>Personal Portfolio Website</h3>
+            <p>A responsive portfolio website built with pure HTML and CSS to showcase my skills and projects.</p>
+            <div class="project-links">
+              <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img">
+            <img src="image 3.JPG" alt="To-Do App">
+          </div>
+          <div class="project-info">
+            <h3>To-Do App (Python)</h3>
+            <p>Simple CLI-based task manager application with features to add, view, and delete tasks.</p>
+            <div class="project-links">
+              <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Calculator">
+          </div>
+          <div class="project-info">
+            <h3>Calculator (Java)</h3>
+            <p>A basic calculator application built using Java with console input for basic arithmetic operations.</p>
+            <div class="project-links">
+              <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="section-title">Testimonials</h2>
+      <div class="testimonials-container">
+        <div class="testimonial-card">
+          <p class="testimonial-text">Kamran is a quick learner and a great team player. His problem-solving skills are impressive, and he's always willing to help others in the team.</p>
+          <div class="testimonial-author">
+            <div class="author-img">
+              <img src="image 2.JPG" alt="Classmate">
+            </div>
+            <div class="author-info">
+              <h4>demo</h4>
+              <p>Classmate</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">Very helpful and always ready to solve bugs. Kamran's attention to detail and dedication to writing clean code makes him a valuable team member.</p>
+          <div class="testimonial-author">
+            <div class="author-img">
+              <img src="image 3.JPG" alt="Project Partner">
+            </div>
+            <div class="author-info">
+              <h4>demo</h4>
+              <p>Project Partner</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">Kamran shows great potential as a developer. His ability to grasp new concepts quickly and apply them practically is remarkable for his experience level.</p>
+          <div class="testimonial-author">
+            <div class="author-img">
+              <img src="image 4.JPG" alt="Mentor">
+            </div>
+            <div class="author-info">
+              <h4>demo</h4>
+              <p>College Mentor</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <div class="contact-details">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <p>kamranalam62073@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <h4>Phone</h4>
+                <p>+91-8298221537 (WhatsApp only)</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Location</h4>
+                <p>Motihari, Bihar, India</p>
+              </div>
+            </div>
+          </div>
+          <h3>Follow Me</h3>
+          <div class="footer-social">
+            <a href="https://github.com/KaiserKH" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/kamran__kaiser" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form id="message-form" action="https://formspree.io/f/mvgrednz" method="POST">
+            <div class="form-group">
+              <label for="name">Full Name*</label>
+              <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address*</label>
+              <input type="email" id="email" name="email" placeholder="your.kamran@kaizer.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number (10 digits*)</label>
+              <div class="phone-input-container">
+                <input type="tel" id="phone1" name="phone1" maxlength="1" required pattern="[0-9]" inputmode="numeric" class="phone-digit" data-next="phone2">
+                <input type="tel" id="phone2" name="phone2" maxlength="1" required pattern="[0-9]" inputmode="numeric" class="phone-digit" data-prev="phone1" data-next="phone3">
+                <input type="tel" id="phone3" name="phone3" maxlength="1" required pattern="[0-9]" inputmode="numeric" class="phone-digit" data-prev="phone2" data-next="phone4">
+                <input type="tel" id="phone4" name="phone4" maxlength="1" required pattern="[0-9]" inputmode="numeric" class="phone-digit" data-prev="phone3" data-next="phone5">
+                <input type="tel" id="phone5" name="phone5" maxlength="1" required pattern="[0-9]" inputmode="numeric" class="phone-digit" data-prev="phone4" data-next="phone6">
+                <input type="tel" id="phone6" name="phone6" maxlength="1" required pattern="[0-9]" inputmode="numeric" class="phone-digit" data-prev="phone5" data-next="phone7">
+                <input type="tel" id="phone7" name="phone7" maxlength="1" required pattern="[0-9]" inputmode="numeric" class="phone-digit" data-prev="phone6" data-next="phone8">
+                <input type="tel" id="phone8" name="phone8" maxlength="1" required pattern="[0-9]" inputmode="numeric" class="phone-digit" data-prev="phone7" data-next="phone9">
+                <input type="tel" id="phone9" name="phone9" maxlength="1" required pattern="[0-9]" inputmode="numeric" class="phone-digit" data-prev="phone8" data-next="phone10">
+                <input type="tel" id="phone10" name="phone10" maxlength="1" required pattern="[0-9]" inputmode="numeric" class="phone-digit" data-prev="phone9">
+              </div>
+              <input type="hidden" id="full-phone" required name="phone">
+              <p class="phone-error">Please enter exactly 10 digits</p>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject*</label>
+              <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Your Message*</label>
+              <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="how-did-you-hear">How did you hear about us?*</label>
+              <select required id="how-did-you-hear" name="how-did-you-hear">
+                <option disabled selected value="">Select an option</option>
+                <option value="Google">Google Search</option>
+                <option value="Social Media">Social Media</option>
+                <option value="Friend">Friend/Colleague</option>
+                <option value="Other">Other (please specify)</option>
+              </select>
+              <div class="other-source-container" id="other-source-container">
+                <input type="text" id="other-source" name="other-source" placeholder="Please specify how you heard about us*">
+              </div>
+            </div>
+            
+            <div class="form-footer">
+              <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+              <p class="form-note">
+                We'll get back to you within 24-48 hours.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">Kamran <span>The Coder X</span></div>
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://github.com/KaiserKH" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/kamran__kaiser" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:kamranalam62073@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="copyright">© 2025 Kamran The Coder X. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <a href="#hero" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+<script src="script.js">script.js</script>
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.innerHTML = navLinks.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+
+    const backToTopBtn = document.querySelector('.back-to-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('active');
+      } else {
+        backToTopBtn.classList.remove('active');
+      }
+    });
+
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const digits = document.querySelectorAll('.phone-digit');
+      const fullPhone = document.getElementById('full-phone');
+      const errorMsg = document.querySelector('.phone-error');
+      const hearAboutSelect = document.getElementById('how-did-you-hear');
+      const otherSourceContainer = document.getElementById('other-source-container');
+      
+      errorMsg.style.display = 'none';
+      
+
+      hearAboutSelect.addEventListener('change', function() {
+        if (this.value === 'Other') {
+          otherSourceContainer.style.display = 'block';
+          document.getElementById('other-source').setAttribute('required', '');
+        } else {
+          otherSourceContainer.style.display = 'none';
+          document.getElementById('other-source').removeAttribute('required');
+        }
+      });
+      
+
+      digits.forEach(digit => {
+        digit.addEventListener('input', function(e) {
+          if (this.value.length === 1) {
+            const nextId = this.getAttribute('data-next');
+            if (nextId) document.getElementById(nextId).focus();
+          }
+          updateFullPhone();
+        });
+        
+
+        digit.addEventListener('keydown', function(e) {
+          if (e.key === 'Backspace' && this.value.length === 0) {
+            const prevId = this.getAttribute('data-prev');
+            if (prevId) document.getElementById(prevId).focus();
+          }
+        });
+      });
+      
+
+      function updateFullPhone() {
+        let phoneNumber = '';
+        digits.forEach(digit => {
+          phoneNumber += digit.value;
+        });
+        fullPhone.value = phoneNumber;
+        
+    
+        errorMsg.style.display = phoneNumber.length === 10 ? 'none' : 'block';
+      }
+      
+
+      const contactForm = document.getElementById('message-form');
+      
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          updateFullPhone();
+          
+          if (fullPhone.value.length !== 10) {
+            e.preventDefault();
+            errorMsg.style.display = 'block';
+            digits[0].focus();
+            return;
+          }
+          
+
+          const submitBtn = contactForm.querySelector('.submit-btn');
+          const originalBtnText = submitBtn.innerHTML;
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+          submitBtn.disabled = true;
+          
+          fetch(contactForm.action, {
+            method: contactForm.method,
+            body: new FormData(contactForm),
+            headers: {
+              'Accept': 'application/json'
+            }
+          })
+          .then(response => {
+            if (response.ok) {
+              // Success message
+              submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+              contactForm.reset();
+              otherSourceContainer.style.display = 'none';
+            } else {
+              throw new Error('Network response was not ok');
+            }
+          })
+          .catch(error => {
+
+            submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error Sending';
+            console.error('Error:', error);
+          })
+          .finally(() => {
+    
+            setTimeout(() => {
+              submitBtn.innerHTML = originalBtnText;
+              submitBtn.disabled = false;
+            }, 3000);
+          });
+        });
+      }
+
+
+      const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.about-content, .skill-category, .project-card, .testimonial-card');
+        
+        elements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.3;
+          
+          if (elementPosition < screenPosition) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+          }
+        });
+      };
+      document.querySelectorAll('.about-content, .skill-category, .project-card, .testimonial-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      });
+
+      window.addEventListener('scroll', animateOnScroll);
+      window.addEventListener('load', animateOnScroll);
+    });</script>
+</body>
+</html>
