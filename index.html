@@ -1771,8 +1771,9 @@
     const navLinks = document.querySelector('.nav-links');
 
     hamburger.addEventListener('click', () => {
+      const wasActive = navLinks.className.includes('active');
       navLinks.classList.toggle('active');
-      hamburger.innerHTML = navLinks.classList.contains('active') 
+      hamburger.innerHTML = !wasActive
         ? '<i class="fas fa-times"></i>' 
         : '<i class="fas fa-bars"></i>';
     });
@@ -1968,7 +1969,7 @@
 
     // Close modal when clicking outside
     window.onclick = function(event) {
-      if (event.target.classList.contains('payment-modal')) {
+      if (event.target.className.includes('payment-modal')) {
         event.target.style.display = 'none';
         document.body.style.overflow = 'auto';
       }
