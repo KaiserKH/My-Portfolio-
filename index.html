@@ -1969,7 +1969,7 @@
 
     // Close modal when clicking outside
     window.onclick = function(event) {
-      if (event.target.className.includes('payment-modal')) {
+      if (/\bpayment-modal\b/.test(event.target.className)) {
         event.target.style.display = 'none';
         document.body.style.overflow = 'auto';
       }
