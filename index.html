@@ -1771,7 +1771,7 @@
     const navLinks = document.querySelector('.nav-links');
 
     hamburger.addEventListener('click', () => {
-      const wasActive = navLinks.className.includes('active');
+      const wasActive = /\bactive\b/.test(navLinks.className);
       navLinks.classList.toggle('active');
       hamburger.innerHTML = !wasActive
         ? '<i class="fas fa-times"></i>' 
