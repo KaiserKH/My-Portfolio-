@@ -515,6 +515,370 @@
       color: var(--text-light);
     }
 
+    /* Donate Section */
+    #donate {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #donate::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
+      opacity: 0.3;
+    }
+
+    #donate .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    #donate h2 {
+      color: white;
+    }
+
+    #donate h2::after {
+      background: white;
+    }
+
+    .donate-intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    .donate-methods {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .donate-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .donate-card:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .donate-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .donate-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .donate-card p {
+      opacity: 0.9;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .donate-btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: white;
+      color: #667eea;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 2px solid white;
+    }
+
+    .donate-btn:hover {
+      background: transparent;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* Payment Modal */
+    .payment-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      background: white;
+      margin: 5% auto;
+      padding: 0;
+      border-radius: 20px;
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+      animation: slideDown 0.3s ease;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 25px 30px;
+      border-radius: 20px 20px 0 0;
+      position: relative;
+    }
+
+    .modal-header h3 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .close-modal {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    .close-modal:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    .modal-body {
+      padding: 30px;
+    }
+
+    .payment-option {
+      margin-bottom: 25px;
+    }
+
+    .payment-option h4 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .payment-option h4 i {
+      color: var(--secondary-color);
+    }
+
+    .upi-id-display {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 10px;
+      border: 2px dashed #667eea;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .upi-id-text {
+      font-family: 'Courier New', monospace;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .copy-btn {
+      background: var(--secondary-color);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .copy-btn:hover {
+      background: var(--accent-color);
+      transform: scale(1.05);
+    }
+
+    .qr-code-container {
+      text-align: center;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .qr-code-container img {
+      max-width: 250px;
+      width: 100%;
+      border: 5px solid white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .qr-instruction {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-top: 10px;
+    }
+
+    .amount-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .amount-btn {
+      padding: 12px;
+      border: 2px solid #ddd;
+      background: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--primary-color);
+      transition: all 0.3s ease;
+    }
+
+    .amount-btn:hover,
+    .amount-btn.active {
+      border-color: var(--secondary-color);
+      background: var(--secondary-color);
+      color: white;
+    }
+
+    .custom-amount {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .custom-amount input {
+      flex: 1;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .custom-amount input:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+    }
+
+    .pay-now-btn {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .pay-now-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    .payment-note {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    .payment-gateways {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .gateway-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      background: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    .gateway-btn:hover {
+      border-color: var(--secondary-color);
+      background: #f8f9fa;
+      transform: translateY(-2px);
+    }
+
+    .gateway-btn i {
+      font-size: 1.5rem;
+    }
+
     /* Contact Section */
     #contact {
       background: white;
@@ -801,6 +1165,18 @@
         height: 40px;
         font-size: 16px;
       }
+
+      .donate-methods {
+        grid-template-columns: 1fr;
+      }
+
+      .payment-gateways {
+        grid-template-columns: 1fr;
+      }
+
+      .amount-options {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 576px) {
@@ -824,6 +1200,19 @@
       .footer-links li {
         margin: 10px 0;
       }
+
+      .upi-id-display {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .modal-content {
+        margin: 10% auto;
+      }
+
+      .amount-options {
+        grid-template-columns: 1fr;
+      }
     }</style>
 <body>
   <nav>
@@ -835,6 +1224,7 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#donate">Support Me</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="hamburger">
@@ -1063,6 +1453,189 @@
       </div>
     </div>
   </section>
+
+  <!-- Donate Section -->
+  <section id="donate">
+    <div class="container">
+      <h2 class="section-title">Support My Work</h2>
+      <p class="donate-intro">
+        Your support helps me continue creating amazing projects and sharing knowledge with the community. 
+        Every contribution, no matter how small, is greatly appreciated and motivates me to keep learning and building!
+      </p>
+      
+      <div class="donate-methods">
+        <div class="donate-card" onclick="openPaymentModal('upi')">
+          <div class="donate-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>UPI Payment</h3>
+          <p>Quick and easy payment through any UPI app like PhonePe, Google Pay, Paytm, or BHIM</p>
+          <span class="donate-btn">Pay via UPI</span>
+        </div>
+        
+        <div class="donate-card" onclick="openPaymentModal('qr')">
+          <div class="donate-icon">
+            <i class="fas fa-qrcode"></i>
+          </div>
+          <h3>Scan QR Code</h3>
+          <p>Simply scan the QR code with any UPI app to make an instant payment</p>
+          <span class="donate-btn">Show QR Code</span>
+        </div>
+        
+        <div class="donate-card" onclick="openPaymentModal('card')">
+          <div class="donate-icon">
+            <i class="fas fa-credit-card"></i>
+          </div>
+          <h3>Card Payment</h3>
+          <p>Pay securely using your Credit/Debit card through trusted payment gateways</p>
+          <span class="donate-btn">Pay with Card</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment Modals -->
+  <div id="upiModal" class="payment-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-mobile-alt"></i> UPI Payment</h3>
+        <span class="close-modal" onclick="closePaymentModal('upiModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="payment-option">
+          <h4><i class="fas fa-id-card"></i> UPI ID</h4>
+          <div class="upi-id-display">
+            <span class="upi-id-text" id="upi-id">kamranalam62073@okicici</span>
+            <button class="copy-btn" onclick="copyUPIId()">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+          </div>
+          <p style="text-align: center; color: var(--text-light); font-size: 0.9rem;">
+            Copy the UPI ID and paste it in your payment app
+          </p>
+        </div>
+        
+        <div class="payment-option">
+          <h4><i class="fas fa-rupee-sign"></i> Select Amount (INR)</h4>
+          <div class="amount-options">
+            <button class="amount-btn" onclick="selectAmount(50)">₹50</button>
+            <button class="amount-btn" onclick="selectAmount(100)">₹100</button>
+            <button class="amount-btn" onclick="selectAmount(200)">₹200</button>
+            <button class="amount-btn" onclick="selectAmount(500)">₹500</button>
+            <button class="amount-btn" onclick="selectAmount(1000)">₹1000</button>
+            <button class="amount-btn" onclick="selectAmount(2000)">₹2000</button>
+          </div>
+          <div class="custom-amount">
+            <input type="number" id="customAmount" placeholder="Enter custom amount" min="1">
+          </div>
+        </div>
+        
+        <button class="pay-now-btn" onclick="initiateUPIPayment()">
+          <i class="fas fa-arrow-right"></i> Open UPI App
+        </button>
+        
+        <div class="payment-note">
+          <i class="fas fa-info-circle"></i> After completing the payment, please send a screenshot to 
+          <strong>kamranalam62073@gmail.com</strong> for confirmation.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="qrModal" class="payment-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-qrcode"></i> Scan QR Code</h3>
+        <span class="close-modal" onclick="closePaymentModal('qrModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="payment-option">
+          <h4><i class="fas fa-camera"></i> Scan with UPI App</h4>
+          <div class="qr-code-container">
+            <div id="qr-code-image"></div>
+            <p class="qr-instruction">Open any UPI app and scan this QR code to make a payment</p>
+          </div>
+        </div>
+        
+        <div class="payment-option">
+          <h4><i class="fas fa-rupee-sign"></i> Select Amount (INR)</h4>
+          <div class="amount-options">
+            <button class="amount-btn" onclick="selectAmountQR(50)">₹50</button>
+            <button class="amount-btn" onclick="selectAmountQR(100)">₹100</button>
+            <button class="amount-btn" onclick="selectAmountQR(200)">₹200</button>
+            <button class="amount-btn" onclick="selectAmountQR(500)">₹500</button>
+            <button class="amount-btn" onclick="selectAmountQR(1000)">₹1000</button>
+            <button class="amount-btn" onclick="selectAmountQR(2000)">₹2000</button>
+          </div>
+          <div class="custom-amount">
+            <input type="number" id="customAmountQR" placeholder="Enter custom amount" min="1" onchange="updateQRCode()">
+          </div>
+        </div>
+        
+        <div class="payment-note">
+          <i class="fas fa-info-circle"></i> The QR code will be updated with your selected amount. 
+          Please send payment confirmation to <strong>kamranalam62073@gmail.com</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cardModal" class="payment-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-credit-card"></i> Card Payment</h3>
+        <span class="close-modal" onclick="closePaymentModal('cardModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="payment-option">
+          <h4><i class="fas fa-rupee-sign"></i> Select Amount (INR)</h4>
+          <div class="amount-options">
+            <button class="amount-btn" onclick="selectAmountCard(50)">₹50</button>
+            <button class="amount-btn" onclick="selectAmountCard(100)">₹100</button>
+            <button class="amount-btn" onclick="selectAmountCard(200)">₹200</button>
+            <button class="amount-btn" onclick="selectAmountCard(500)">₹500</button>
+            <button class="amount-btn" onclick="selectAmountCard(1000)">₹1000</button>
+            <button class="amount-btn" onclick="selectAmountCard(2000)">₹2000</button>
+          </div>
+          <div class="custom-amount">
+            <input type="number" id="customAmountCard" placeholder="Enter custom amount" min="1">
+          </div>
+        </div>
+        
+        <div class="payment-option">
+          <h4><i class="fas fa-wallet"></i> Choose Payment Gateway</h4>
+          <div class="payment-gateways">
+            <button class="gateway-btn" onclick="processPayment('razorpay')">
+              <i class="fas fa-bolt" style="color: #3395FF;"></i>
+              Razorpay
+            </button>
+            <button class="gateway-btn" onclick="processPayment('paytm')">
+              <i class="fas fa-wallet" style="color: #00BAF2;"></i>
+              Paytm
+            </button>
+            <button class="gateway-btn" onclick="processPayment('phonepe')">
+              <i class="fas fa-mobile-alt" style="color: #5F259F;"></i>
+              PhonePe
+            </button>
+            <button class="gateway-btn" onclick="processPayment('googlepay')">
+              <i class="fab fa-google-pay" style="color: #4285F4;"></i>
+              Google Pay
+            </button>
+          </div>
+        </div>
+        
+        <button class="pay-now-btn" onclick="initiateCardPayment()">
+          <i class="fas fa-lock"></i> Proceed to Payment
+        </button>
+        
+        <div class="payment-note">
+          <i class="fas fa-shield-alt"></i> Your payment information is secure and encrypted. 
+          All transactions are processed through trusted payment gateways.
+        </div>
+      </div>
+    </div>
+  </div>
+
   <section id="contact">
     <div class="container">
       <h2 class="section-title">Get In Touch</h2>
@@ -1179,6 +1752,7 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#donate">Support Me</a></li>
         </ul>
         <div class="footer-social">
           <a href="https://github.com/KaiserKH" target="_blank"><i class="fab fa-github"></i></a>
@@ -1365,6 +1939,178 @@
 
       window.addEventListener('scroll', animateOnScroll);
       window.addEventListener('load', animateOnScroll);
-    });</script>
+    });
+
+    // Payment Modal Functions
+    let selectedAmount = 0;
+
+    function openPaymentModal(type) {
+      const modalId = type + 'Modal';
+      document.getElementById(modalId).style.display = 'block';
+      document.body.style.overflow = 'hidden';
+      
+      // Generate QR code if opening QR modal
+      if (type === 'qr') {
+        generateQRCode(100); // Default amount
+      }
+    }
+
+    function closePaymentModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+      document.body.style.overflow = 'auto';
+      selectedAmount = 0;
+      
+      // Reset all amount buttons
+      document.querySelectorAll('.amount-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      if (event.target.classList.contains('payment-modal')) {
+        event.target.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Copy UPI ID
+    function copyUPIId() {
+      const upiId = document.getElementById('upi-id').textContent;
+      navigator.clipboard.writeText(upiId).then(() => {
+        const btn = event.target.closest('.copy-btn');
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        btn.style.background = '#27ae60';
+        
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          btn.style.background = '';
+        }, 2000);
+      });
+    }
+
+    // Amount selection functions
+    function selectAmount(amount) {
+      selectedAmount = amount;
+      document.querySelectorAll('#upiModal .amount-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+      document.getElementById('customAmount').value = '';
+    }
+
+    function selectAmountQR(amount) {
+      selectedAmount = amount;
+      document.querySelectorAll('#qrModal .amount-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+      document.getElementById('customAmountQR').value = '';
+      generateQRCode(amount);
+    }
+
+    function selectAmountCard(amount) {
+      selectedAmount = amount;
+      document.querySelectorAll('#cardModal .amount-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+      document.getElementById('customAmountCard').value = '';
+    }
+
+    // Generate QR Code using QR Code API
+    function generateQRCode(amount) {
+      const upiId = 'kamranalam62073@okicici';
+      const name = 'Kamran Alam';
+      const upiString = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(name)}&am=${amount}&cu=INR`;
+      
+      const qrCodeContainer = document.getElementById('qr-code-image');
+      qrCodeContainer.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(upiString)}" alt="UPI QR Code">`;
+    }
+
+    function updateQRCode() {
+      const customAmount = document.getElementById('customAmountQR').value;
+      if (customAmount && customAmount > 0) {
+        selectedAmount = parseInt(customAmount);
+        generateQRCode(selectedAmount);
+        document.querySelectorAll('#qrModal .amount-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+      }
+    }
+
+    // UPI Payment
+    function initiateUPIPayment() {
+      const customAmount = document.getElementById('customAmount').value;
+      const amount = customAmount || selectedAmount;
+      
+      if (!amount || amount <= 0) {
+        alert('Please select or enter an amount');
+        return;
+      }
+
+      const upiId = 'kamranalam62073@okicici';
+      const name = 'Kamran Alam';
+      const upiUrl = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(name)}&am=${amount}&cu=INR`;
+      
+      // Try to open UPI app
+      window.location.href = upiUrl;
+      
+      // Show confirmation message
+      setTimeout(() => {
+        alert(`Thank you for your support! Please complete the payment of ₹${amount} in your UPI app.\\n\\nAfter payment, kindly send the screenshot to kamranalam62073@gmail.com`);
+      }, 1000);
+    }
+
+    // Card Payment
+    function initiateCardPayment() {
+      const customAmount = document.getElementById('customAmountCard').value;
+      const amount = customAmount || selectedAmount;
+      
+      if (!amount || amount <= 0) {
+        alert('Please select or enter an amount');
+        return;
+      }
+
+      alert(`Thank you for choosing to donate ₹${amount}!\\n\\nPlease select a payment gateway to proceed.`);
+    }
+
+    function processPayment(gateway) {
+      const customAmount = document.getElementById('customAmountCard').value;
+      const amount = customAmount || selectedAmount;
+      
+      if (!amount || amount <= 0) {
+        alert('Please select or enter an amount first');
+        return;
+      }
+
+      // In a real implementation, you would integrate with the actual payment gateway
+      // For now, we'll show a message
+      const gatewayNames = {
+        'razorpay': 'Razorpay',
+        'paytm': 'Paytm',
+        'phonepe': 'PhonePe',
+        'googlepay': 'Google Pay'
+      };
+
+      alert(`Redirecting to ${gatewayNames[gateway]} for payment of ₹${amount}...\\n\\nNote: This is a demo. To set up actual payments, you'll need to integrate with ${gatewayNames[gateway]}'s API.\\n\\nFor now, please use UPI or QR code payment option.`);
+      
+      // You can add actual payment gateway integration here
+      // Example for Razorpay:
+      // var options = {
+      //   key: "YOUR_KEY_ID",
+      //   amount: amount * 100,
+      //   currency: "INR",
+      //   name: "Kamran The Coder X",
+      //   description: "Support My Work",
+      //   handler: function (response) {
+      //     alert("Payment successful!");
+      //   }
+      // };
+      // var rzp = new Razorpay(options);
+      // rzp.open();
+    }
+</script>
 </body>
 </html>
