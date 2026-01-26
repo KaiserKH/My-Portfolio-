@@ -1506,7 +1506,7 @@
           <h4><i class="fas fa-id-card"></i> UPI ID</h4>
           <div class="upi-id-display">
             <span class="upi-id-text" id="upi-id">kamranalam62073@okicici</span>
-            <button class="copy-btn" onclick="copyUPIId()">
+            <button class="copy-btn" onclick="copyUPIId(event)">
               <i class="fas fa-copy"></i> Copy
             </button>
           </div>
@@ -1518,12 +1518,12 @@
         <div class="payment-option">
           <h4><i class="fas fa-rupee-sign"></i> Select Amount (INR)</h4>
           <div class="amount-options">
-            <button class="amount-btn" onclick="selectAmount(50)">₹50</button>
-            <button class="amount-btn" onclick="selectAmount(100)">₹100</button>
-            <button class="amount-btn" onclick="selectAmount(200)">₹200</button>
-            <button class="amount-btn" onclick="selectAmount(500)">₹500</button>
-            <button class="amount-btn" onclick="selectAmount(1000)">₹1000</button>
-            <button class="amount-btn" onclick="selectAmount(2000)">₹2000</button>
+            <button class="amount-btn" onclick="selectAmount(50, event)">₹50</button>
+            <button class="amount-btn" onclick="selectAmount(100, event)">₹100</button>
+            <button class="amount-btn" onclick="selectAmount(200, event)">₹200</button>
+            <button class="amount-btn" onclick="selectAmount(500, event)">₹500</button>
+            <button class="amount-btn" onclick="selectAmount(1000, event)">₹1000</button>
+            <button class="amount-btn" onclick="selectAmount(2000, event)">₹2000</button>
           </div>
           <div class="custom-amount">
             <input type="number" id="customAmount" placeholder="Enter custom amount" min="1">
@@ -1560,12 +1560,12 @@
         <div class="payment-option">
           <h4><i class="fas fa-rupee-sign"></i> Select Amount (INR)</h4>
           <div class="amount-options">
-            <button class="amount-btn" onclick="selectAmountQR(50)">₹50</button>
-            <button class="amount-btn" onclick="selectAmountQR(100)">₹100</button>
-            <button class="amount-btn" onclick="selectAmountQR(200)">₹200</button>
-            <button class="amount-btn" onclick="selectAmountQR(500)">₹500</button>
-            <button class="amount-btn" onclick="selectAmountQR(1000)">₹1000</button>
-            <button class="amount-btn" onclick="selectAmountQR(2000)">₹2000</button>
+            <button class="amount-btn" onclick="selectAmountQR(50, event)">₹50</button>
+            <button class="amount-btn" onclick="selectAmountQR(100, event)">₹100</button>
+            <button class="amount-btn" onclick="selectAmountQR(200, event)">₹200</button>
+            <button class="amount-btn" onclick="selectAmountQR(500, event)">₹500</button>
+            <button class="amount-btn" onclick="selectAmountQR(1000, event)">₹1000</button>
+            <button class="amount-btn" onclick="selectAmountQR(2000, event)">₹2000</button>
           </div>
           <div class="custom-amount">
             <input type="number" id="customAmountQR" placeholder="Enter custom amount" min="1" onchange="updateQRCode()">
@@ -1590,12 +1590,12 @@
         <div class="payment-option">
           <h4><i class="fas fa-rupee-sign"></i> Select Amount (INR)</h4>
           <div class="amount-options">
-            <button class="amount-btn" onclick="selectAmountCard(50)">₹50</button>
-            <button class="amount-btn" onclick="selectAmountCard(100)">₹100</button>
-            <button class="amount-btn" onclick="selectAmountCard(200)">₹200</button>
-            <button class="amount-btn" onclick="selectAmountCard(500)">₹500</button>
-            <button class="amount-btn" onclick="selectAmountCard(1000)">₹1000</button>
-            <button class="amount-btn" onclick="selectAmountCard(2000)">₹2000</button>
+            <button class="amount-btn" onclick="selectAmountCard(50, event)">₹50</button>
+            <button class="amount-btn" onclick="selectAmountCard(100, event)">₹100</button>
+            <button class="amount-btn" onclick="selectAmountCard(200, event)">₹200</button>
+            <button class="amount-btn" onclick="selectAmountCard(500, event)">₹500</button>
+            <button class="amount-btn" onclick="selectAmountCard(1000, event)">₹1000</button>
+            <button class="amount-btn" onclick="selectAmountCard(2000, event)">₹2000</button>
           </div>
           <div class="custom-amount">
             <input type="number" id="customAmountCard" placeholder="Enter custom amount" min="1">
@@ -1975,7 +1975,7 @@
     }
 
     // Copy UPI ID
-    function copyUPIId() {
+    function copyUPIId(event) {
       const upiId = document.getElementById('upi-id').textContent;
       navigator.clipboard.writeText(upiId).then(() => {
         const btn = event.target.closest('.copy-btn');
@@ -1991,31 +1991,37 @@
     }
 
     // Amount selection functions
-    function selectAmount(amount) {
+    function selectAmount(amount, event) {
       selectedAmount = amount;
       document.querySelectorAll('#upiModal .amount-btn').forEach(btn => {
         btn.classList.remove('active');
       });
-      event.target.classList.add('active');
+      if (event && event.target) {
+        event.target.classList.add('active');
+      }
       document.getElementById('customAmount').value = '';
     }
 
-    function selectAmountQR(amount) {
+    function selectAmountQR(amount, event) {
       selectedAmount = amount;
       document.querySelectorAll('#qrModal .amount-btn').forEach(btn => {
         btn.classList.remove('active');
       });
-      event.target.classList.add('active');
+      if (event && event.target) {
+        event.target.classList.add('active');
+      }
       document.getElementById('customAmountQR').value = '';
       generateQRCode(amount);
     }
 
-    function selectAmountCard(amount) {
+    function selectAmountCard(amount, event) {
       selectedAmount = amount;
       document.querySelectorAll('#cardModal .amount-btn').forEach(btn => {
         btn.classList.remove('active');
       });
-      event.target.classList.add('active');
+      if (event && event.target) {
+        event.target.classList.add('active');
+      }
       document.getElementById('customAmountCard').value = '';
     }
 
